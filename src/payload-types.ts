@@ -41,6 +41,9 @@ export interface Post {
   id: string;
   title: string;
   authors?: (string | User)[] | null;
+  content: {
+    [k: string]: unknown;
+  }[];
   updatedAt: string;
   createdAt: string;
 }

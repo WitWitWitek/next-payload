@@ -1,3 +1,4 @@
+import { slateEditor } from "@payloadcms/richtext-slate";
 import type { CollectionConfig } from "payload/types";
 
 export const Posts: CollectionConfig = {
@@ -27,6 +28,7 @@ export const Posts: CollectionConfig = {
       name: "content",
       type: "richText",
       required: true,
+      editor: slateEditor({}),
     },
   ],
 };

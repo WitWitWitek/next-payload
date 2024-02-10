@@ -1,14 +1,17 @@
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/posts`);
-  return res.json();
-};
+import RichText from "@/components/RichText/RichText";
+import payload from "payload";
 
 export default async function Home() {
-  const data = await getData();
-  console.log(data);
+  const { docs: posts } = await payload.find({ collection: "posts" });
   return (
     <main>
-      <div>Hello Marian!</div>
+      {posts.map((post) => (
+        <section key={post.id}>
+          <h2>{post.title}</h2>
+          <hr />
+          <RichText content={post.content} />
+        </section>
+      ))}
     </main>
   );
 }
