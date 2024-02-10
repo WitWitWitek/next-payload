@@ -21,4 +21,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI!,
   }),
   editor: slateEditor({}),
+  typescript: {
+    outputFile: path.resolve(__dirname, "./payload-types.ts"),
+  },
 });
