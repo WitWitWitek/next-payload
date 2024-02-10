@@ -1,5 +1,7 @@
 import { slateEditor } from "@payloadcms/richtext-slate";
 import type { CollectionConfig } from "payload/types";
+import formatSlug from "./hooks/formatSlug";
+import { slugField } from "./hooks/slug";
 
 export const Posts: CollectionConfig = {
   slug: "posts",
@@ -30,5 +32,6 @@ export const Posts: CollectionConfig = {
       required: true,
       editor: slateEditor({}),
     },
+    slugField(),
   ],
 };

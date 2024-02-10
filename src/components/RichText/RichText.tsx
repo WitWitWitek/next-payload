@@ -1,4 +1,4 @@
-import serialize from "../../utils/serialize";
+import serialize from "./serialize";
 
 const RichText = ({ content }: { content: any }) => {
   if (!content) {

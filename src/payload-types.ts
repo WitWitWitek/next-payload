@@ -44,6 +44,7 @@ export interface Post {
   content: {
     [k: string]: unknown;
   }[];
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }

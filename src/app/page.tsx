@@ -1,4 +1,5 @@
 import RichText from "@/components/RichText/RichText";
+import Link from "next/link";
 import payload from "payload";
 
 export default async function Home() {
@@ -9,7 +10,7 @@ export default async function Home() {
         <section key={post.id}>
           <h2>{post.title}</h2>
           <hr />
-          <RichText content={post.content} />
+          <Link href={`posts/${post.slug}`}>więcej...</Link>
         </section>
       ))}
     </main>
